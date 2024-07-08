@@ -1,9 +1,9 @@
+import type { IBoard } from "../../config/interfaces";
 import { useState } from "react";
 import { API_URL, ButtonVariant } from "../../config/constants";
 import useSWR from "swr";
 import List from "./List";
 import { useParams } from "react-router";
-import { IBoard } from "../../config/interfaces";
 import { Link } from "react-router-dom";
 import useSWRMutation from "swr/mutation";
 import { postRequest } from "../../config/fetcher";

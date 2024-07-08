@@ -1,11 +1,6 @@
-import { ReactNode } from "react";
+import type { ILoaderProps } from "../../config/interfaces";
 import { ImSpinner3 } from "react-icons/im";
 
-interface ILoaderProps {
-	isLoading: boolean;
-	size?: number;
-	children?: ReactNode | ReactNode[];
-}
 const Loader = ({ isLoading, children, size = 20 }: ILoaderProps) => {
 	return (
 		<div className="relative">

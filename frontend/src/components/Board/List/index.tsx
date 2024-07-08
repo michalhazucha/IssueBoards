@@ -1,8 +1,8 @@
+import type { IListProps } from "../../../config/interfaces";
 import { useState } from "react";
 import { API_URL } from "../../../config/constants";
 import { postRequest } from "../../../config/fetcher";
 import useSWRMutation from "swr/mutation";
-import { IListProps } from "../../../config/interfaces";
 import Loader from "../../Loader";
 import Item from "../Item";
 

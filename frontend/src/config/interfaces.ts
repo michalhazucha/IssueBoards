@@ -30,9 +30,21 @@ export interface IListProps {
 }
 
 export type TVariant = "light" | "dark";
+
 export interface IButtonProps{
   onClick: () => void;
   disabled: boolean;
   variant: TVariant;
   children:ReactNode[]|string
+}
+
+export interface IItemProps{
+	text: string,
+	key: string | number
+}
+
+export interface ILoaderProps {
+	isLoading: boolean;
+	size?: number;
+	children?: ReactNode | ReactNode[];
 }
