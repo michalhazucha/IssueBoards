@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { KeyedMutator } from "swr";
 
 export interface IItem {
@@ -26,4 +27,12 @@ export interface IListProps {
 	title: string;
 	tasks: string[];
 	mutate: KeyedMutator<IBoard>;
+}
+
+export type TVariant = "light" | "dark";
+export interface IButtonProps{
+  onClick: () => void;
+  disabled: boolean;
+  variant: TVariant;
+  children:ReactNode[]|string
 }

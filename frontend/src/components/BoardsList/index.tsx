@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { API_URL } from "../../config/constants";
+import { API_URL, ButtonVariant } from "../../config/constants";
 import useSWR from "swr";
 import useSWRMutation from "swr/mutation";
 import { postRequest } from "../../config/fetcher";
 import { IBoard } from "../../config/interfaces";
 import Loader from "../Loader";
+import Button from "../Button";
 
 const BoardSList = () => {
 	const { data: boards, isLoading } = useSWR(`${API_URL}/boards`);
@@ -38,13 +39,13 @@ const BoardSList = () => {
 						placeholder="..."
 						className="p-2 border border-gray-300 rounded-md"
 					/>
-					<button
-						onClick={createBoard}
-						className="bg-white text-teal-500 py-2 px-4 rounded-lg shadow-lg hover:bg-gray-100 transition"
+					<Button
 						disabled={name?.length < 3}
+						onClick={createBoard}
+						variant={ButtonVariant.light}
 					>
 						Create Board
-					</button>
+					</Button>
 				</div>
 			</Loader>
 		</div>
