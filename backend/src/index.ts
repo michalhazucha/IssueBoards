@@ -19,25 +19,29 @@ interface Item {
 interface List {
 	id: string;
 	name: string;
-	items: Item[];
+	items?: Item[];
 }
 
 interface Board {
 	id: string;
 	name: string;
-	lists: List[];
+	lists?: List[];
 }
 
-let data: Board[] = JSON.parse(fs.readFileSync("data/data.json", "utf-8"));
+interface Data {
+	boards: Board[];
+}
+
+let data: Data = JSON.parse(fs.readFileSync("data/data.json", "utf-8"));
 
 // Get all boards
 app.get("/api/boards", (req, res) => {
-	res.json(data);
+	res.json(data.boards);
 });
 
 // Get board by ID
 app.get("/api/boards/:id", (req, res) => {
-	const board = data.find((board) => board.id === req.params.id);
+	const board = data?.boards.find((board) => board.id === req.params.id);
 	if (board) {
 		res.json(board);
 	} else {
@@ -68,15 +72,18 @@ app.post("/api/boards", (req, res) => {
 			},
 		],
 	};
-	data.push(newBoard);
+	data.boards.push(newBoard);
 	fs.writeFileSync("data/data.json", JSON.stringify(data, null, 2));
 	res.json(newBoard);
 });
 
 // Create a new list in a board
 app.post("/api/boards/:id/lists", (req, res) => {
-	const board = data?.find((board) => board?.id === req.params.id);
+	const board = data.boards.find((board) => board?.id === req.params.id);
 	if (board) {
+		if (!board.lists) {
+			board.lists = [];
+		}
 		const newList: List = {
 			id: uuidv4(),
 			name: req.body.name,
@@ -94,8 +101,8 @@ app.post("/api/boards/:id/lists", (req, res) => {
 app.post("/api/lists/:listId/items", (req, res) => {
 	let list: List | undefined;
 
-	data?.forEach((board) => {
-		const foundList = board?.lists?.find(
+	data.boards.forEach((board) => {
+		const foundList = board.lists?.find(
 			(list) => list.id === req.params.listId
 		);
 		if (foundList) {
@@ -104,6 +111,9 @@ app.post("/api/lists/:listId/items", (req, res) => {
 	});
 
 	if (list) {
+		if (!list.items) {
+			list.items = [];
+		}
 		const newItem: Item = {
 			id: uuidv4(),
 			name: req.body.name,
