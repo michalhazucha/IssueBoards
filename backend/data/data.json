@@ -1,0 +1,157 @@
+[
+  {
+    "id": "698d5199-cda3-4438-ad5d-12eb19f47e56",
+    "name": "Prvý Board",
+    "lists": [
+      {
+        "id": "03ceea12-ec86-4159-8010-a3199c2b6a32",
+        "name": "TODO",
+        "items": [
+          {
+            "id": "b513a748-499d-4751-87c6-b67825b1e1cd",
+            "name": "Absolvovať pohovor"
+          },
+          {
+            "id": "ffca0f14-b05d-49c2-81a2-ec1e6ee5dad9",
+            "name": "Podpísať zmluvu"
+          },
+          {
+            "id": "f82b26a2-110a-450f-8c96-a48d0163f0e6",
+            "name": "Nastúpiť do práce"
+          },
+          {
+            "id": "2e528862-79c8-4e0c-80c9-a0c40e345599",
+            "name": "Hello"
+          }
+        ]
+      },
+      {
+        "id": "ff2c7f71-a0a0-4e07-b9f9-b527786f21a2",
+        "name": "In Progress",
+        "items": [
+          {
+            "id": "d75e9e02-cb75-4879-930f-5adef0748ac0",
+            "name": "Urobiť skúšobný príklad"
+          },
+          {
+            "id": "aa4f31cc-0be6-41cc-a99f-52256bfb685f",
+            "name": "INProgress"
+          }
+        ]
+      },
+      {
+        "id": "722fb2dc-612b-45d9-839b-3f2def44882e",
+        "name": "Done",
+        "items": [
+          {
+            "id": "faabf944-780e-4989-954b-f3352db479a0",
+            "name": "DoneTask"
+          }
+        ]
+      },
+      {
+        "id": "5452e68c-83e1-4aa4-9f9d-2e8175c647ac",
+        "name": "Freezed",
+        "items": [
+          {
+            "id": "249f192c-5014-42c3-97dd-91cf529df74d",
+            "name": "Here we do"
+          }
+        ]
+      },
+      {
+        "id": "5a2319c2-6ad6-4588-9c94-6074237867e1",
+        "name": "TOFUCK",
+        "items": []
+      },
+      {
+        "id": "d2586be9-e366-4010-96c4-691b3e4d9af7",
+        "name": "ToDo",
+        "items": []
+      }
+    ]
+  },
+  {
+    "id": "fce76b89-daeb-41f5-838b-d427cf01c3f9",
+    "name": "Druhý board",
+    "lists": []
+  },
+  {
+    "id": "af57c65f-b70c-4651-99f6-ee8e1466321a",
+    "name": "Treti board",
+    "lists": [
+      {
+        "id": "e30c0465-fb4b-4d1e-9754-3814afd611de",
+        "name": "TODO",
+        "items": [
+          {
+            "id": "4a4bb532-ae71-4832-997b-499b025bea5e",
+            "name": "Here we are"
+          }
+        ]
+      },
+      {
+        "id": "123e52f2-44b7-4b78-bb9e-4685ccbb0758",
+        "name": "In Progress",
+        "items": []
+      },
+      {
+        "id": "c682fa24-779e-40e7-a752-2fb051cadff6",
+        "name": "Done",
+        "items": []
+      }
+    ]
+  },
+  {
+    "id": "cd6a2cd2-0f45-4391-ba05-0f3d176c1107",
+    "name": "Štvrtý board",
+    "lists": [
+      {
+        "id": "af0fec46-23c6-4847-ac20-e39ed3a61adc",
+        "name": "TODO",
+        "items": []
+      },
+      {
+        "id": "4114ae7a-4a59-4c99-837a-6d3132ac72e2",
+        "name": "In Progress",
+        "items": []
+      },
+      {
+        "id": "e1234549-2b54-46c6-acd0-aa384d7c512f",
+        "name": "Done",
+        "items": []
+      },
+      {
+        "id": "5afd06a3-11c0-405e-b9fe-9b045143d46c",
+        "name": "Here we are",
+        "items": []
+      },
+      {
+        "id": "ae13b710-aa21-4f9a-a98b-9ad037e6ebd6",
+        "name": "Next sheat",
+        "items": []
+      }
+    ]
+  },
+  {
+    "id": "bd81f1b5-698d-4614-b3e4-d05bf95947c5",
+    "name": "Pátej board",
+    "lists": [
+      {
+        "id": "dae145dd-3e2d-44bd-be04-d8b2f18f6d93",
+        "name": "TODO",
+        "items": []
+      },
+      {
+        "id": "9303d756-2e5e-4af0-af8d-d7f23d0d53f2",
+        "name": "In Progress",
+        "items": []
+      },
+      {
+        "id": "07e88d07-506c-4346-9bd9-9eebed22d5ba",
+        "name": "Done",
+        "items": []
+      }
+    ]
+  }
+]
