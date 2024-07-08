@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { API_URL } from "../../config/constants";
 import useSWR from "swr";
 import Column from "./Coolumn";

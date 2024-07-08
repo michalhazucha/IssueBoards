@@ -1,5 +1,6 @@
-//TODO:FIX interfaces
-export const fetcher = (...args) => fetch(...args).then((res) => res.json());
+
+export const fetcher = (...args: [string, RequestInit?]): Promise<string> =>
+  fetch(...args).then((res) => res.json());
 
 export async function postRequest(
 	url: string,
