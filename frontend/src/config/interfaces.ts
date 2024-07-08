@@ -21,7 +21,7 @@ export interface IAppData {
 	boards: IBoard[];
 }
 
-export interface IColumnProps {
+export interface IListProps {
 	id: number | string;
 	title: string;
 	tasks: string[];

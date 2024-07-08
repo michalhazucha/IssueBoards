@@ -41,6 +41,7 @@ const BoardSList = () => {
 					<button
 						onClick={createBoard}
 						className="bg-white text-teal-500 py-2 px-4 rounded-lg shadow-lg hover:bg-gray-100 transition"
+						disabled={name?.length < 3}
 					>
 						Create Board
 					</button>

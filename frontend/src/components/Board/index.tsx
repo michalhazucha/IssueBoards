@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { API_URL } from "../../config/constants";
 import useSWR from "swr";
-import Column from "./Coolumn";
+import List from "./List";
 import { useParams } from "react-router";
 import { IBoard } from "../../config/interfaces";
 import { Link } from "react-router-dom";
@@ -19,7 +19,7 @@ const Board = () => {
 	);
 	const [listName, setListName] = useState("");
 	const createList = async () => {
-		await trigger({ name: listName });
+		listName?.length > 2 && (await trigger({ name: listName }));
 		await mutateData();
 	};
 
@@ -41,6 +41,7 @@ const Board = () => {
 					/>
 					<button
 						className="bg-teal-500 text-white font-bold ck py-2 px-4 rounded-lg shadow-lg hover:bg-teal-600 transition h-10"
+						disabled={listName?.length > 3}
 						onClick={createList}
 					>
 						+ add new list
@@ -49,7 +50,7 @@ const Board = () => {
 			</div>
 			<div className="flex space-x-4">
 				{data?.lists?.map((list) => (
-					<Column
+					<List
 						title={list?.name}
 						tasks={list?.items?.map((item) => item?.name)}
 						id={list?.id}

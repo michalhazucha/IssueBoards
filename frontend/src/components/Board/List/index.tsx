@@ -2,10 +2,11 @@ import { useState } from "react";
 import { API_URL } from "../../../config/constants";
 import { postRequest } from "../../../config/fetcher";
 import useSWRMutation from "swr/mutation";
-import { IColumnProps } from "../../../config/interfaces";
+import { IListProps } from "../../../config/interfaces";
 import Loader from "../../Loader";
+import Item from "../Item";
 
-const Column = ({ id, title, tasks, mutate }: IColumnProps) => {
+const List = ({ id, title, tasks, mutate }: IListProps) => {
 	const [text, setText] = useState("");
 
 	const onSubmitFunc = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -28,9 +29,7 @@ const Column = ({ id, title, tasks, mutate }: IColumnProps) => {
 			<h3 className="text-lg font-bold mb-4">{title ?? ""}</h3>
 			<div className="space-y-2">
 				{tasks.map((task: string, index: number) => (
-					<div key={index} className="bg-teal-500 text-white p-2 rounded">
-						{task}
-					</div>
+					<Item text={task} key={index} />
 				))}
 				<form className="flex flex-row w-full" onSubmit={onSubmitFunc}>
 					<input
@@ -53,4 +52,4 @@ const Column = ({ id, title, tasks, mutate }: IColumnProps) => {
 		</div>
 	);
 };
-export default Column;
+export default List;
