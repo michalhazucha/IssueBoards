@@ -1,8 +1,8 @@
 import type { IButtonProps, TVariant } from '../../config/interfaces'
 import { useEffect, useState } from 'react'
 
-const Button = ({ onClick, disabled, variant, children }:IButtonProps) => {
-  const [classNames, setClassNames] = useState('dark')
+const Button = ({ onClick, disabled, variant="dark", children }:IButtonProps) => {
+  const [classNames, setClassNames] = useState("")
   const changeVariant = (variant:TVariant) => {
     if (variant === 'light') {
       setClassNames(

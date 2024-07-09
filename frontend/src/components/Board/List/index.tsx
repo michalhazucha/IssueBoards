@@ -25,13 +25,10 @@ const List = ({ id, title, tasks, mutate }: IListProps) => {
 		postRequest
 	);
 	return (
-		<div className="bg-white p-4 rounded shadow-md w-1/3">
+		<div className="bg-white p-4 rounded shadow-md w-full h-fit" key={id}>
 			<h3 className="text-lg font-bold mb-4">{title ?? ""}</h3>
 			<div className="space-y-2">
-				{tasks.map((task: string, index: number) => (
-					<Item text={task} key={index} />
-				))}
-				<form className="flex flex-row w-full" onSubmit={onSubmitFunc}>
+			<form className="flex flex-row w-full" onSubmit={onSubmitFunc}>
 					<input
 						value={text}
 						type="text"
@@ -48,6 +45,9 @@ const List = ({ id, title, tasks, mutate }: IListProps) => {
 						/>
 					</Loader>
 				</form>
+				{tasks?.map((task: string, index: number) => (
+					<Item text={task} index={index} />
+				))}
 			</div>
 		</div>
 	);

@@ -9,6 +9,13 @@ module.exports = {
 			animation: {
 				"spin-slow": "spin 1.5s linear infinite",
 			},
+			justifySelf: {
+        'auto': 'auto',
+        'start': 'start',
+        'end': 'end',
+        'center': 'center',
+        'stretch': 'stretch',
+      }
 		},
 	},
 	plugins: [],

@@ -40,7 +40,7 @@ export interface IButtonProps{
 
 export interface IItemProps{
 	text: string,
-	key: string | number
+	index: string | number
 }
 
 export interface ILoaderProps {

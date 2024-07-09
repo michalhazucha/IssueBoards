@@ -20,21 +20,26 @@ const Board = () => {
 	);
 	const [listName, setListName] = useState("");
 	const createList = async () => {
-		listName?.length > 2 && (await trigger({ name: listName }));
-		await mutateData();
+		if (listName?.length > 2) {
+			await trigger({ name: listName });
+			await mutateData();
+		}
 	};
 
 	return (
 		<div className="p-4 mb-2 bg-blue-400 min-h-screen">
-			<div className="flex flex-row justify-between ">
-				<Link
-					className="bg-teal-500 text-white font-bold ck py-2 px-4 rounded-lg shadow-lg hover:bg-teal-600 transition h-10"
-					to="/"
-				>
-					{"<"} Boards
-				</Link>
-				<h2 className="text-4xl font-bold text-center mb-8 ">{data?.name}</h2>
-				<div>
+			<div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+				<div className="m-auto md:ml-0">
+					<Link
+						className="bg-teal-500 text-white font-bold py-2 px-4 rounded-lg shadow-lg hover:bg-teal-600 transition h-10 w-fit"
+						to="/"
+					>
+						{"<"} Boards
+					</Link>
+				</div>
+
+				<h2 className="text-4xl font-bold text-center">{data?.name}</h2>
+				<div className="m-auto md:mr-0">
 					<input
 						value={listName}
 						onChange={(e) => setListName(e.target.value)}
@@ -49,7 +54,7 @@ const Board = () => {
 					</Button>
 				</div>
 			</div>
-			<div className="flex space-x-4">
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pt-6">
 				{data?.lists?.map((list) => (
 					<List
 						title={list?.name}
